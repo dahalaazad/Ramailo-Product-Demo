@@ -8,7 +8,7 @@ export const ramailoApi = axios.create({
   },
 });
 
-export function setupInterceptor(store) {
+export const setupInterceptor = store => {
   ramailoApi.interceptors.request.use(
     //Attach headerToken if required
     config => config,
@@ -25,4 +25,4 @@ export function setupInterceptor(store) {
       return Promise.reject(error);
     },
   );
-}
+};
