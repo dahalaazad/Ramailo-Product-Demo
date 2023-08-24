@@ -11,7 +11,7 @@ import {
 import {useDispatch, useSelector} from 'react-redux';
 import {getProductList, setCurrentProduct} from '../redux/productSlice';
 import {ProductCard} from '../components';
-import {heightToDp, widthToDp} from '../utils';
+import {heightToDp, showToast, widthToDp} from '../utils';
 import Spinner from 'react-native-loading-spinner-overlay';
 
 const HomeScreen = ({navigation}) => {
@@ -78,6 +78,7 @@ const HomeScreen = ({navigation}) => {
         title="Go to Details"
         onPress={() => navigation.navigate('DetailScreen')}
       /> */}
+      {/* {showToast('error', 'Oops, There is a problem. Please try again')} */}
     </ScrollView>
   );
 };

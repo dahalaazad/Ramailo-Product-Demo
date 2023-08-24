@@ -1,6 +1,5 @@
 import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
 import {useSelector} from 'react-redux';
-import Gallery from 'react-native-awesome-gallery';
 import {heightToDp, widthToDp} from '../utils';
 
 const DetailScreen = () => {
@@ -19,7 +18,12 @@ const DetailScreen = () => {
         </Text>
 
         <Text
-          style={{fontSize: 18, color: '#fff', paddingBottom: heightToDp(10),fontWeight:'700' }}>
+          style={{
+            fontSize: 18,
+            color: '#fff',
+            paddingBottom: heightToDp(10),
+            fontWeight: '700',
+          }}>
           ${currentProduct?.price}
         </Text>
 
@@ -47,7 +51,7 @@ const DetailScreen = () => {
         <FlatList
           data={currentProduct?.images}
           horizontal
-          renderItem={({item}) => (
+          renderItem={({item, index}) => (
             <Image
               source={{uri: item}}
               resizeMode="contain"
@@ -60,7 +64,7 @@ const DetailScreen = () => {
           ItemSeparatorComponent={
             <View style={{paddingHorizontal: widthToDp(10)}} />
           }
-          keyExtractor={item => item.id}
+          keyExtractor={index => index}
         />
       </View>
     </View>
