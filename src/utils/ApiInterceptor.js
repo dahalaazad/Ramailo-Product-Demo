@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {showToast} from './ShowToast';
 
 export const ramailoApi = axios.create({
   baseURL: 'https://dummyjson.com',
@@ -22,6 +23,7 @@ export const setupInterceptor = store => {
 
     //Display error using toast message
     error => {
+      showToast('error', 'Oops, There is a problem. Please try again');
       return Promise.reject(error);
     },
   );
