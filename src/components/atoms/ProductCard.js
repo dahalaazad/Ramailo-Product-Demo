@@ -5,8 +5,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const ProductCard = ({productDetails, onPressHandler}) => {
   const shortenString = str => {
-    if (str.length > 20) {
-      return str.substring(0, 17) + '...';
+    if (str.length > 15) {
+      return str.substring(0, 12) + '...';
     }
     return str;
   };
