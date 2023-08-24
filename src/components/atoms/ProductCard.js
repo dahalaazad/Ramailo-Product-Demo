@@ -5,8 +5,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const ProductCard = ({productDetails, onPressHandler}) => {
   const shortenString = str => {
-    if (str.length > 22) {
-      return str.substring(0, 19) + '...';
+    if (str.length > 20) {
+      return str.substring(0, 17) + '...';
     }
     return str;
   };
@@ -19,7 +19,7 @@ const ProductCard = ({productDetails, onPressHandler}) => {
         <View style={{flexDirection: 'row'}}>
           <View style={{paddingRight: widthToDp(10)}}>
             <Image
-              source={{uri: productDetails?.images[0]}}
+              source={{uri: productDetails?.thumbnail}}
               resizeMode="cover"
               height={50}
               width={50}
@@ -29,7 +29,7 @@ const ProductCard = ({productDetails, onPressHandler}) => {
           </View>
 
           <View style={{}}>
-            <Text style={styles.textStyle}>
+            <Text style={[styles.textStyle, {fontSize: widthToDp(20)}]}>
               {shortenString(productDetails?.title)}
             </Text>
 
